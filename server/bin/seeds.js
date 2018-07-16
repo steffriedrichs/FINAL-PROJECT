@@ -4,7 +4,7 @@ const mongoose    = require("mongoose");
 const bodyParser  = require("body-parser");
 
 const User     = require("../models/user");
-const Module   = require("../models/module");
+const Course   = require("../models/course");
 const Unit     = require("../models/unit");
 const Topic    = require("../models/topic");
 const Exercise = require("../models/exercise");
@@ -13,7 +13,7 @@ const dbName = "statistics";
 mongoose.connect(process.env.MONGODB_URI);
 console.log('process.env.MONGODB_URI', process.env.MONGODB_URI)
 
-const modules = [
+const courses = [
   {
     name: "Statistics 1",
     _units: []
@@ -54,48 +54,48 @@ const units = [
 const topics = [
   {
     name: "Mode",
-    _training: [],
-    _test: [] 
+    _trainingExercises: [],
+    _testExercises: [] 
   }, 
   {
     name: "Median",
-    _training: [],
-    _test: []  
+    _trainingExercises: [],
+    _testExercises: []  
   }, 
   {
     name: "Mean",
-    _training: [],
-    _test: [] 
+    _trainingExercises: [],
+    _testExercises: [] 
   },
   {
     name: "Standard Deviation",
-    _training: [],
-    _test: [] 
+    _trainingExercises: [],
+    _testExercises: [] 
   }, 
   {
     name: "Variance",
-    _training: [],
-    _test: [] 
+    _trainingExercises: [],
+    _testExercises: [] 
   }, 
   {
     name: "t-Test",
-    _training: [],
-    _test: [] 
+    _trainingExercises: [],
+    _testExercises: [] 
   },
   {
     name: "Interpretation of Test Results",
-    _training: [],
-    _test: [] 
+    _trainingExercises: [],
+    _testExercises: [] 
   }, 
   {
     name: "Sum and Difference of Fractions",
-    _training: [],
-    _test: [] 
+    _trainingExercises: [],
+    _testExercises: [] 
   }, 
   {
     name: "Product and Division of Fractions",
-    _training: [],
-    _test: [] 
+    _trainingExercises: [],
+    _testExercises: [] 
   }
 ]; 
 
@@ -152,8 +152,8 @@ const exercises = [
 ]; 
 
 // Bcrypt to encrypt passwords
-const bcrypt = require("bcrypt");
-const salt = bcrypt.genSaltSync(10);
+// const bcrypt = require("bcrypt");
+// const salt = bcrypt.genSaltSync(10);
 
 const users = [
   {
@@ -183,56 +183,49 @@ const users = [
 Exercise.deleteMany()
   .then(() => Topic.deleteMany())
   .then(() => Unit.deleteMany())
-  .then(() => Module.deleteMany())
+  .then(() => Course.deleteMany())
   .then(() => User.deleteMany())
   .then(() => {
-  Exercise.create(exercises)
-  .then( exercises => {
+    Exercise.create(exercises)
+    .then( exercises => {
 
-  topics[0]._training.push(exercises[2]._id);
-  topics[1]._training.push(exercises[3]._id);
-  topics[2]._training.push(exercises[0]._id);
-  topics[2]._test.push(exercises[1]._id);
-  topics[7]._training.push(exercises[4]._id);
-  topics[7]._test.push(exercises[6]._id);
-  topics[8]._training.push(exercises[5]._id);
+    topics[0]._trainingExercises.push(exercises[2]._id);
+    topics[1]._trainingExercises.push(exercises[3]._id);
+    topics[2]._trainingExercises.push(exercises[0]._id);
+    topics[2]._testExercises.push(exercises[1]._id);
+    topics[7]._trainingExercises.push(exercises[4]._id);
+    topics[7]._testExercises.push(exercises[6]._id);
+    topics[8]._trainingExercises.push(exercises[5]._id);
 
-  Topic.create(topics).then( topics => {
+    Topic.create(topics).then( topics => {
 
-    units[0]._topics.push(topics[0]._id, topics[1]._id, topics[2]._id);
-    units[1]._topics.push(topics[3]._id, topics[4]._id);
-    units[2]._topics.push(topics[5]._id, topics[6]._id);
-    units[4]._topics.push(topics[7]._id, topics[8]._id);
+      units[0]._topics.push(topics[0]._id, topics[1]._id, topics[2]._id);
+      units[1]._topics.push(topics[3]._id, topics[4]._id);
+      units[2]._topics.push(topics[5]._id, topics[6]._id);
+      units[4]._topics.push(topics[7]._id, topics[8]._id);
 
-    Unit.create(units).then( units => {
-      
-      modules[0]._units.push(units[0]._id, units[1]._id);
-      modules[1]._units.push(units[2]._id);
-      modules[2]._units.push(units[3]._id, units[4]._id);
+      Unit.create(units).then( units => {
+        
+        courses[0]._units.push(units[0]._id, units[1]._id);
+        courses[1]._units.push(units[2]._id);
+        courses[2]._units.push(units[3]._id, units[4]._id);
 
-      Module.create(modules).then( modules => {
+        Course.create(courses).then( courses => {
 
-        users[0]._courses.push(modules[0]._id, modules[1]._id);
-        users[1]._courses.push(modules[0]._id, modules[2]._id);
-        users[2]._courses.push(modules[1]._id,);
+          users[0]._courses.push(courses[0]._id, courses[1]._id);
+          users[1]._courses.push(courses[0]._id, courses[2]._id);
+          users[2]._courses.push(courses[1]._id,);
 
-        User.register(users[0], "abc").then(_ => {
-          User.register(users[1], "123").then(_ => {
-            User.register(users[2], "dog").then(_ => {
-              console.log("Database was successfully seeded!");
-              mongoose.connection.close();
+          User.register(users[0], "abc").then(_ => {
+            User.register(users[1], "123").then(_ => {
+              User.register(users[2], "dog").then(_ => {
+                console.log("Database was successfully seeded!");
+                mongoose.connection.close();
+              });
             });
           });
         });
-
-        // User.create(users)
-        // .then( users => {
-        // })
-        // .catch((err) => { console.log(err) })
       });
-    });
-  });  
+    });  
+  });
 });
-});
-
-// User.register(user,password)

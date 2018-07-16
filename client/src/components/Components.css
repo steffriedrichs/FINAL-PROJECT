@@ -1,0 +1,35 @@
+.oneCourseContainer{
+  align-items: center;
+  width: 200px;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+  background: rgb(49, 88, 82);
+  border-radius: 15px;
+}
+.aroundAllContainer{
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.myLink{
+  color: white;
+  font-weight: 200px;
+  text-align: center; 
+  position: relative;
+  top: 42%;
+}
+.oneUnitContainer{
+  align-items: center;
+  margin: 30px;
+  padding: 10px;
+  background: rgb(118, 158, 151);
+  border-radius: 15px;
+}
+.oneTopicContainer{
+  align-items: center;
+  margin: 30px;
+  padding: 10px;
+  background: rgb(110, 142, 190);
+  border-radius: 15px;
+}
