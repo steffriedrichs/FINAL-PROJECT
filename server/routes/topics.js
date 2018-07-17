@@ -11,7 +11,8 @@ router.get('/:topicId/training', (req, res, next) => {
   .populate("_trainingExercises")
   .then( myTopic => {
       res.json(myTopic)
-  });
+  })
+  .catch(error => next(error));
 });
 
 router.get('/:topicId/test', (req, res, next) => {
@@ -19,7 +20,8 @@ router.get('/:topicId/test', (req, res, next) => {
   .populate("_testExercises")
   .then( myTopic => {
       res.json(myTopic)
-  });
+  })
+  .catch(error => next(error));
 });
 
 module.exports = router;

@@ -2,6 +2,15 @@
   font-size: 20px;
 }
 
+/* general container */
+.aroundAllContainer{
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/* containers for individual components */
 .oneCourseContainer{
   align-items: center;
   width: 200px;
@@ -10,14 +19,42 @@
   padding: 10px;
   background: rgb(49, 88, 82);
   border-radius: 15px;
+  /* border-style: solid;
+  border-color: rgb(24, 26, 25);
+  border-width: 1px; */
+}
+.oneUnitContainer{
+  align-items: center;
+  margin: 30px;
+  padding: 10px;
+  background: rgb(118, 158, 151);
+  border-radius: 15px;
+}
+.oneTopicContainer{
+  align-items: center;
+  margin: 30px;
+  padding: 10px;
+  background: rgb(110, 142, 190);
+  border-radius: 15px;
+}
+.oneExerciseContainer{
+  align-items: center;
+  margin: 20px;
+  padding: 10px;
+  background: rgb(177, 187, 202);
+  border-radius: 15px;
+}
+.topicName{
+  color: white;
+  font-size: 25px;
+  font-weight: 300px;
+  text-align: center; 
+  position: relative;
+  top: 30%;
 }
 
-.aroundAllContainer{
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-}
 
+/* Link related styles */
 .myLink{
   font-size: 25px;
   color: white;
@@ -32,39 +69,11 @@
   color: grey;
 }
 
-.oneUnitContainer{
-  align-items: center;
-  margin: 30px;
-  padding: 10px;
-  background: rgb(118, 158, 151);
-  border-radius: 15px;
-}
 
-.oneTopicContainer{
-  align-items: center;
-  margin: 30px;
-  padding: 10px;
-  background: rgb(110, 142, 190);
-  border-radius: 15px;
+/* User answers an exercise form */
+.myForm{
+  border-radius: 10px; 
 }
-
-.oneExerciseContainer{
-  align-items: center;
-  margin: 20px;
-  padding: 10px;
-  background: rgb(177, 187, 202);
-  border-radius: 15px;
-}
-
-.topicName{
-  color: white;
-  font-size: 25px;
-  font-weight: 300px;
-  text-align: center; 
-  position: relative;
-  top: 30%;
-}
-
 .mySubmitButton{
   background: rgb(20, 121, 79);
   color: white;
@@ -75,7 +84,6 @@
   margin: 10px 5px;
   border-color: rgb(83, 114, 101);
 }
-
 .mySolutionButton{
   background: rgb(126, 22, 31);
   color: white;
@@ -86,15 +94,20 @@
   margin: 10px 5px;
   border-color: rgb(129, 67, 93);
 }
-
-.myForm{
-  border-radius: 10px; 
-}
 .correctAnswer{
   border-color: rgb(20, 121, 79);
-  border-width: 5px;
+  background: rgb(135, 184, 163);
+  border-width: 3px;
 }
 .wrongAnswer{
   border-color: rgb(126, 22, 31);
-  border-width: 5px;
+  background:rgb(185, 113, 120);
+  border-width: 3px;
+}
+.solution{
+  font-weight: bold;
+}
+.solutionText{
+  text-align: justify;
+  padding: 20px;
 }

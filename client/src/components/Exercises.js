@@ -22,7 +22,6 @@ class OneExercise extends React.Component {
       answer: event.target.value      
     }) 
     // check, if submitted answer is correct: 
-    // this.state.answer == this.props.solution ? console.log("correct!") : console.log("wrong!");
     this.state.answer == this.props.solution ? this.setState({formClass: "correctAnswer"}) : this.setState({formClass: "wrongAnswer"});
   }
   // display solution, if user requests it:
@@ -49,7 +48,7 @@ class OneExercise extends React.Component {
             <button className="mySubmitButton" onClick={(e) => this.submitSolution(e)}>Submit</button>
             <button className="mySolutionButton" onClick={(e) => this.showSolution(e)}>Show Solution</button>
           </form>
-          {this.state.displaySolution ? <p>{this.props.description}</p> : <span></span>}
+          {this.state.displaySolution ? <p className="solutionText"><span className="solution">Solution: </span> {this.props.description}</p> : <span></span>}
         </div>
     );
   }

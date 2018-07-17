@@ -11,6 +11,7 @@ import Courses from './Courses';
 import Units from './Units';
 import Topics from './Topics';
 import Exercises from './Exercises';
+import Lecture from './Lecture';
 import api from '../api';
 import logo from '../logo.svg';
 import './App.css';
@@ -43,17 +44,16 @@ class App extends Component {
           <Route path="/courses" exact component={Courses} />
           <Route path="/courses/:courseId" exact component={Units} />
           <Route path="/courses/units/:unitId" exact component={Topics} />
+          <Route path="/courses/units/topics/lecture/:topicId" exact component={Lecture} />
           <Route path="/courses/units/topics/:topicId/:type" exact component={Exercises} />
-          {/* <Route path="/courses/units/topics/:topicId/training" exact component={Exercises} /> */}
-          {/* <Route path="/courses/units/topics/:topicId/test" exact component={Exercises} /> */}
           <Route render={() => <h2>404</h2>} />
         </Switch> 
 
-        <Markdown escapeHtml={false} source={`# Title
+        {/* <Markdown escapeHtml={false} source={`# Title
     \n\n\n
   <img src="https://latex.codecogs.com/gif.latex?\\sqrt{n}"  />
     \n\n\n
-    ## Title 2`} />       
+    ## Title 2`} />        */}
       </div>
     );
   }

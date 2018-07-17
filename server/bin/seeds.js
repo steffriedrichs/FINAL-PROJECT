@@ -54,41 +54,56 @@ const units = [
 const topics = [
   {
     name: "Mode",
+    lecture: "Test",
+  //   lecture: `
+  //   <Markdown escapeHtml={false} source={# Title
+  //   \n\n\n
+  // <img src="https://latex.codecogs.com/gif.latex?\\sqrt{n}"  />
+  //   \n\n\n
+  //   ## Title 2} />  
+  //   `,
     _trainingExercises: [],
     _testExercises: [] 
   }, 
   {
     name: "Median",
+    lecture: "Test",
     _trainingExercises: [],
     _testExercises: []  
   }, 
   {
     name: "Mean",
+    lecture: "Test",
     _trainingExercises: [],
     _testExercises: [] 
   },
   {
     name: "Standard Deviation",
+    lecture: "Test",
     _trainingExercises: [],
     _testExercises: [] 
   }, 
   {
     name: "Variance",
+    lecture: "Test",
     _trainingExercises: [],
     _testExercises: [] 
   }, 
   {
     name: "t-Test",
+    lecture: "Test",
     _trainingExercises: [],
     _testExercises: [] 
   },
   {
     name: "Interpretation of Test Results",
+    lecture: "Test",
     _trainingExercises: [],
     _testExercises: [] 
   }, 
   {
     name: "Sum and Difference of Fractions",
+    lecture: "Test",
     _trainingExercises: [],
     _testExercises: [] 
   }, 

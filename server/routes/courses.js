@@ -22,7 +22,8 @@ router.get('/:courseId', (req, res, next) => {
   .populate("_units")  //get the objects in the array instead of the ids only
   .then( myCourse => {
       res.json(myCourse)
-  });
+  })
+  .catch(error => next(error));
 });
 
 module.exports = router;
