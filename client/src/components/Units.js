@@ -25,9 +25,8 @@ class Units extends React.Component {
   componentDidMount(){
     api.getOneCourse(this.props.match.params.courseId)
     .then( currentCourse => {
-      console.log("getting the current course!!", currentCourse);
       this.setState({
-       myCourse: currentCourse ,
+       myCourse: currentCourse,
        loading: false
       })
     })

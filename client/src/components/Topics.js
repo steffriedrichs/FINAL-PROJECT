@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './Components.css';
 import api from '../api';
 
@@ -8,7 +8,9 @@ class OneTopic extends React.Component {
   render() {
     return (
         <div className="oneTopicContainer">
-        <Link className="myLink" to={`/courses/units/topics/${this.props.id}`}>{this.props.name}</Link>
+          <p className="topicName">{this.props.name}</p>
+          <Link className="myLink" to={`/courses/units/topics/${this.props.id}/training`}>Training</Link>
+          <Link className="myLink" to={`/courses/units/topics/${this.props.id}/test`}>Test</Link>
         </div>
     );
   }
@@ -23,10 +25,10 @@ class Topics extends React.Component {
     }
   }
   componentDidMount(){
-    api.getOneCourse(this.props.match.params.unitId)
+    api.getOneUnit(this.props.match.params.unitId)
     .then( currentUnit => {
       this.setState({
-       myCourse: currentUnit,
+       myUnit: currentUnit,
        loading: false
       })
     })
@@ -37,9 +39,9 @@ class Topics extends React.Component {
       return "Loading..."
     return (
       <div>
-        <h1>Units in {this.state.myUnit.name}</h1>
+        <h1>All Topics in {this.state.myUnit.name}</h1>
         <div className="aroundAllContainer">
-        {this.state.myCourse._topics.map( (topic, index) => {
+        {this.state.myUnit._topics.map( (topic, index) => {
           return (
           <div className="oneTopicContainer"> 
           <OneTopic 

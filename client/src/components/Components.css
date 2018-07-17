@@ -7,18 +7,27 @@
   background: rgb(49, 88, 82);
   border-radius: 15px;
 }
+
 .aroundAllContainer{
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
 }
+
 .myLink{
+  font-size: 25px;
   color: white;
   font-weight: 200px;
   text-align: center; 
   position: relative;
-  top: 42%;
+  top: 35%;
+  margin: 10px;
+  text-decoration: none;
 }
+.myLink:hover{
+  color: grey;
+}
+
 .oneUnitContainer{
   align-items: center;
   margin: 30px;
@@ -26,10 +35,50 @@
   background: rgb(118, 158, 151);
   border-radius: 15px;
 }
+
 .oneTopicContainer{
   align-items: center;
   margin: 30px;
   padding: 10px;
   background: rgb(110, 142, 190);
   border-radius: 15px;
+}
+
+.oneExerciseContainer{
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  background: rgb(177, 187, 202);
+  border-radius: 15px;
+}
+
+.topicName{
+  color: white;
+  font-size: 25px;
+  font-weight: 300px;
+  text-align: center; 
+  position: relative;
+  top: 30%;
+}
+
+.mySubmitButton{
+  background: rgb(20, 121, 79);
+  color: white;
+  font-size: 15px;
+  font-weight: 30px;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px 5px;
+  border-color: rgb(83, 114, 101);
+}
+
+.mySolutionButton{
+  background: rgb(114, 25, 150);
+  color: white;
+  font-size: 15px;
+  font-weight: 30px;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px 5px;
+  border-color: rgb(121, 87, 134);
 }

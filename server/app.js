@@ -15,9 +15,12 @@ var Exercise = require('./models/exercise');
 var Topic = require('./models/topic');
 var Unit = require('./models/unit');
 var Module = require('./models/course');
+
 var authRoutes = require('./routes/auth');
 var usersRoutes = require('./routes/users');
 var coursesRoutes = require('./routes/courses');
+var unitsRoutes = require('./routes/units');
+var topicsRoutes = require('./routes/topics');
 
 require('./configs/database');
 require('./configs/cloudinary');
@@ -65,11 +68,12 @@ const strategy = new Strategy(
 passport.use(strategy);
 
 // List all your API routes
-// tell programm in which files my routes can be found
+// tell programm in which files my routes are:
 app.use('/api', authRoutes);
 app.use('/api/users', usersRoutes);
 app.use('/api/courses', coursesRoutes);
-
+app.use('/api/units', unitsRoutes);
+app.use('/api/topics', topicsRoutes);
 
 // For any routes that starts with "/api", catch 404 and forward to error handler
 app.use('/api/*', (req, res, next) => {

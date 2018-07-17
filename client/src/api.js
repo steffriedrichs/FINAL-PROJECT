@@ -21,11 +21,32 @@ export default {
 
   getOneCourse(courseId) {
     return service
-      .get(`/courses/${courseId}`)
+    .get(`/courses/${courseId}`)
+    .then(res => res.data)
+    .catch(errHandler);
+  },
+  
+  getOneUnit(unitId) {
+    return service
+      .get(`/units/${unitId}`)
       .then(res => res.data)
       .catch(errHandler);
   },
-  
+
+  getTopicTraining(topicId) {
+    return service
+      .get(`/topics/${topicId}/training`)
+      .then(res => res.data)
+      .catch(errHandler);
+  },
+
+  getTopicTest(topicId) {
+    return service
+      .get(`/topics/${topicId}/test`)
+      .then(res => res.data)
+      .catch(errHandler);
+  },
+
   getSecret() {
     return service
       .get('/secret')
