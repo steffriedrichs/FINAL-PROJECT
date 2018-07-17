@@ -132,7 +132,7 @@ const exercises = [
     name: "Calculate the Sum of Fractions",
     question: "1/2 + 4/3 = ",
     solution: "11/6",
-    description: "The median is the value standing in the middle after sorting all data in increasing order.",
+    description: "1/2 + 4/3 = 3/6 + 8/6 = 11/6.",
     points: 2 
   }, 
   {

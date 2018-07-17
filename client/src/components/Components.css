@@ -1,3 +1,7 @@
+*{
+  font-size: 20px;
+}
+
 .oneCourseContainer{
   align-items: center;
   width: 200px;
@@ -46,7 +50,7 @@
 
 .oneExerciseContainer{
   align-items: center;
-  margin: 10px;
+  margin: 20px;
   padding: 10px;
   background: rgb(177, 187, 202);
   border-radius: 15px;
@@ -73,12 +77,24 @@
 }
 
 .mySolutionButton{
-  background: rgb(114, 25, 150);
+  background: rgb(126, 22, 31);
   color: white;
   font-size: 15px;
   font-weight: 30px;
   border-radius: 10px;
   padding: 5px;
   margin: 10px 5px;
-  border-color: rgb(121, 87, 134);
+  border-color: rgb(129, 67, 93);
+}
+
+.myForm{
+  border-radius: 10px; 
+}
+.correctAnswer{
+  border-color: rgb(20, 121, 79);
+  border-width: 5px;
+}
+.wrongAnswer{
+  border-color: rgb(126, 22, 31);
+  border-width: 5px;
 }

@@ -9,24 +9,33 @@ class OneExercise extends React.Component {
     super(props);
     this.state = {
       answer: "",
-      displaySolution: false
+      displaySolution: false,
+      formClass: ""
     }
     this.submitSolution = this.handleEventSubmitSolution.bind(this);
     this.showSolution   = this.handleEventShowSolution.bind(this);
   }
   handleEventSubmitSolution(event){
     event.preventDefault();
+    const answer =  event.target.value;
     this.setState({
-      // answer: event.target.value      
-      answer: "17"
+      answer: event.target.value      
     }) 
-    console.log("BBBBBBBBBBBBb",this.state.answer);
+    // check, if submitted answer is correct: 
+    // this.state.answer == this.props.solution ? console.log("correct!") : console.log("wrong!");
+    this.state.answer == this.props.solution ? this.setState({formClass: "correctAnswer"}) : this.setState({formClass: "wrongAnswer"});
   }
+  // display solution, if user requests it:
   handleEventShowSolution(event){
     event.preventDefault();
     this.setState({
       displaySolution: true
     })
+  }
+  handleInputChange(stateFieldName, event) {
+    let newState = {}
+    newState[stateFieldName] = event.target.value
+    this.setState(newState)
   }
   render() {
     return (
@@ -36,7 +45,7 @@ class OneExercise extends React.Component {
           <p>{this.props.question}</p>
           <br/>
           <form>
-            Your Answer: <input type="text" name="answer"/> <br/><br/>
+            Your Answer: <input type="text" className={`myForm ${this.state.formClass}`} onChange={(e) => {this.handleInputChange("answer", e)}} /> <br/><br/>
             <button className="mySubmitButton" onClick={(e) => this.submitSolution(e)}>Submit</button>
             <button className="mySolutionButton" onClick={(e) => this.showSolution(e)}>Show Solution</button>
           </form>
