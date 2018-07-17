@@ -33,6 +33,13 @@ export default {
       .catch(errHandler);
   },
 
+  getOneTopic(topicId) {
+    return service
+      .get(`/topics/${topicId}`)
+      .then(res => res.data)
+      .catch(errHandler);
+  },
+
   getTopicTraining(topicId) {
     return service
       .get(`/topics/${topicId}/training`)

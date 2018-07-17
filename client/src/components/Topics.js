@@ -8,7 +8,6 @@ class OneTopic extends React.Component {
   render() {
     return (
         <div className="oneTopicContainer">
-          {/* <p className="topicName">{this.props.name}</p> */}
           <Link className="myLink" to={`/courses/units/topics/lecture/${this.props.id}`}>{this.props.name}</Link><br/><br/>
           <Link className="myLink" to={`/courses/units/topics/${this.props.id}/training`}>Training</Link>
           <Link className="myLink" to={`/courses/units/topics/${this.props.id}/test`}>Test</Link>

@@ -6,6 +6,15 @@ const config = require('../configs/index');
 const Topic = require('../models/topic');
 const mongoose = require("mongoose");
 
+
+router.get('/:topicId', (req, res, next) => {
+  Topic.findById(req.params.topicId)
+  .then( myTopic => {
+      res.json(myTopic)
+  })
+  .catch(error => next(error));
+});
+
 router.get('/:topicId/training', (req, res, next) => {
   Topic.findById(req.params.topicId)
   .populate("_trainingExercises")

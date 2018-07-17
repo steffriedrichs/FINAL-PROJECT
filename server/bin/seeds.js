@@ -54,14 +54,12 @@ const units = [
 const topics = [
   {
     name: "Mode",
-    lecture: "Test",
-  //   lecture: `
-  //   <Markdown escapeHtml={false} source={# Title
-  //   \n\n\n
-  // <img src="https://latex.codecogs.com/gif.latex?\\sqrt{n}"  />
-  //   \n\n\n
-  //   ## Title 2} />  
-  //   `,
+    // lecture: "Test",
+    lecture: `escapeHtml={false} source={# Title
+    \n\n\n
+  <img src="https://latex.codecogs.com/gif.latex?\\sqrt{n}"  />
+    \n\n\n
+    ## Title 2}`,
     _trainingExercises: [],
     _testExercises: [] 
   }, 
