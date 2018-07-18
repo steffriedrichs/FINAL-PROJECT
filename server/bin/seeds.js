@@ -54,119 +54,90 @@ const units = [
 const topics = [
   {
     name: "Mode",
-    lecture: {
-      text: "",
-      formula: "",
-      exampleText: "",
-      exampleFormula: "",
-      finalText: ""
-    },
+    lectureElements: [],
     _trainingExercises: [],
     _testExercises: [] 
   }, 
   {
     name: "Median",
-    lecture: {
-      text: `The mean is a well known and often used measure of scale. It takes into consideration all 
-      given data, but is less robust against outliers as compared to e.g. the mode or median. For a total number
-      of n observations, denoted by indexed x, we calculate the mean as follows: `,
-      formula: `mean(x) = \\frac{1}{n} \\sum_{i=1}^n x_i`,
-      exampleText: "bla bla",
-      exampleFormula: "1+2+3 = 6",
-      finalText: "some final words"
-    },
+    lectureElements: [],
     _trainingExercises: [],
     _testExercises: []  
   }, 
   {
     name: "Mean",
-    lecture: {
-      text: `The mean is a well known and frequently used measure of central tendency. It is also refered to as
+    lectureElements: [
+    {
+      element:`The mean is a well known and frequently used measure of central tendency. It is also refered to as
       arithmetic mean or average, when the context is clear. The mean is calculated by summation of all available
-      measurements and subsequent division of the sum by their number.
-      Thus, it takes into consideration all available observations in the calculation, but is less robust against 
-      outliers as compared to e.g. the mode or median.
-      For a total number of n observations, denoted by indexed x, we calculate the mean as follows: `,
-      formula: `\\overline{x} = \\frac{1}{n} \\sum_{i=1}^n x_i`,
-      exampleText: `Let's have a look at the following example: What is the mean age of the following 5 patients visiting
-      the doctor's office this morning? Ms. Smith (87), Mr. Black (41), Emily and Stella Jones (17 and 22), Mr. Thompson (38).`,
-      exampleFormula: "\\overline{x} = \\frac{1}{5} (87 + 41 + 17 + 22 + 38) = \\frac{205}{5} = 41.",
-      finalText: `The total count of our observations is 5, thus, we set n to 5 in our example. The sum of all five
-      observations is 205. So the mean can be calculates by deviding 205 by 5, resulting in 41. This means the average age 
-      of the patiens is 41 years.`
+      measurements and subsequent division of the sum by their number.`,
+      isText: true
     },
+    {
+      element:`Thus, it takes into consideration all available observations in the calculation, but is less robust against 
+      outliers as compared to e.g. the mode or median.`,
+      isText: true
+    },
+    {
+      element:`For a total number of n observations, denoted by indexed x, we calculate the mean as follows:`,
+      isText: true
+    },
+    {
+      element:`\\overline{x} = \\frac{1}{n} \\sum_{i=1}^n x_i`,
+      isText: false
+    },
+    {
+      element:`Let's have a look at the following example: What is the mean age of the following 5 patients visiting
+      the doctor's office this morning? Ms. Smith (87), Mr. Black (41), Emily and Stella Jones (17 and 22), Mr. Thompson (38).`,
+      isText: true
+    },
+    {
+      element:`\\overline{x} = \\frac{1}{5} (87 + 41 + 17 + 22 + 38) = \\frac{205}{5} = 41.`,
+      isText: false
+    },
+    {
+      element:`The total count of our observations is 5, thus, we set n to 5 in our example. The sum of all five
+      observations is 205. So the mean can be calculates by deviding 205 by 5, resulting in 41. This means the average age 
+      of the patiens is 41 years.`,
+      isText: true
+    } 
+    ],
     _trainingExercises: [],
     _testExercises: [] 
   },
   {
     name: "Standard Deviation",
-    lecture: {
-      text: "",
-      formula: "",
-      exampleText: "",
-      exampleFormula: "",
-      finalText: ""
-    },
+    lectureElements: [],
     _trainingExercises: [],
     _testExercises: [] 
   }, 
   {
     name: "Variance",
-    lecture: {
-      text: "",
-      formula: "",
-      exampleText: "",
-      exampleFormula: "",
-      finalText: ""
-    },
+    lectureElements: [],
     _trainingExercises: [],
     _testExercises: [] 
   }, 
   {
     name: "t-Test",
-    lecture: {
-      text: "",
-      formula: "",
-      exampleText: "",
-      exampleFormula: "",
-      finalText: ""
-    },
+    lectureElements: [],
     _trainingExercises: [],
     _testExercises: [] 
   },
   {
     name: "Interpretation of Test Results",
-    lecture: {
-      text: "",
-      formula: "",
-      exampleText: "",
-      exampleFormula: "",
-      finalText: ""
-    },
+    lectureElements: [],
     _trainingExercises: [],
     _testExercises: [] 
   }, 
   {
     name: "Sum and Difference of Fractions",
-    lecture: {
-      text: "",
-      formula: "",
-      exampleText: "",
-      exampleFormula: "",
-      finalText: ""
-    },
+    lectureElements: [],
     _trainingExercises: [],
     _testExercises: [] 
   }, 
   {
     name: "Product and Division of Fractions",
-    lecture: {
-      text: "",
-      formula: "",
-      exampleText: "",
-      exampleFormula: "",
-      finalText: ""
-    },
+    lectureElements: [],
     _trainingExercises: [],
     _testExercises: [] 
   }

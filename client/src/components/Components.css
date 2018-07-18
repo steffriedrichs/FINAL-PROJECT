@@ -115,8 +115,8 @@
 /* lecture part */
 .lectureText{
   text-align: justify;
-  padding: 2% 10%;
+  padding: 1% 10% 1% 10%;
 }
 .lectureHeading{
-font-size: 25px;
+font-size: 30px;
 }

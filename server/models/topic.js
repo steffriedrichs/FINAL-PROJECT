@@ -2,16 +2,21 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const topicSchema = new mongoose.Schema({ 
-  name:                 { type: String, required: true },
-  lecture: {
-    text:           { type: String },
-    formula:        { type: String },
-    exampleText:    { type: String },
-    exampleFormula: { type: String },
-    finalText:      { type: String }
-  },
-  _trainingExercises:   [{ type: Schema.Types.ObjectId, ref: "Exercise" }], 
-  _testExercises:       [{ type: Schema.Types.ObjectId, ref: "Exercise" }], 
+  name:            { type: String, required: true },
+  lectureElements: 
+  [{
+    element: { type: String },
+    isText:  { type: Boolean}
+  }],
+  // lecture: {
+  //   texts:          [{ type: String }],
+  //   formula:        { type: String },
+  //   exampleText:    { type: String },
+  //   exampleFormula: { type: String },
+  //   finalText:      { type: String }
+  // },
+  _trainingExercises: [{ type: Schema.Types.ObjectId, ref: "Exercise" }], 
+  _testExercises:     [{ type: Schema.Types.ObjectId, ref: "Exercise" }], 
 });
 
 const Topic = mongoose.model('Topic', topicSchema);

@@ -30,21 +30,13 @@ class Lecture extends React.Component {
       <div>
         <br/>
         <h1 className="lectureHeading">{this.state.myTopic.name}</h1>
-        {/* allow for several paragraphs by mapping through text array: */}
-        {this.state.myTopic.lecture.texts.map( (text, index) => {
+        {/* allow for more flexibility by mapping through an array with text and formulas */}
+        {this.state.myTopic.lectureElements.map( (element, index) => {
           return (
-            <p key={index} className="lectureText">{text}</p> 
+            element.isText ? <p key={index} className="lectureText">{element.element}</p>: 
+            <MathJax.Context key={index} input='tex'><MathJax.Node>{element.element}</MathJax.Node></MathJax.Context>
           )
         })}
-        {/* <p className="lectureText">{this.state.myTopic.lecture.text}</p> */}
-        <MathJax.Context input='tex'>
-          <MathJax.Node>{this.state.myTopic.lecture.formula}</MathJax.Node>
-        </MathJax.Context> 
-        <p className="lectureText">{this.state.myTopic.lecture.exampleText}</p>
-        <MathJax.Context input='tex'>
-          <MathJax.Node>{this.state.myTopic.lecture.exampleFormula}</MathJax.Node>
-        </MathJax.Context>
-        <p className="lectureText">{this.state.myTopic.lecture.finalText}</p>
       </div>
     );
   }
