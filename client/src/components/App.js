@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Markdown from 'react-markdown';
 import { Route, Link, Switch } from 'react-router-dom';
 import Home from './Home';
-// import Countries from './Countries';
-// import AddCountry from './AddCountry';
 import Secret from './Secret';
 import Login from './Login';
 import Signup from './Signup';
@@ -48,12 +46,6 @@ class App extends Component {
           <Route path="/courses/units/topics/:topicId/:type" exact component={Exercises} />
           <Route render={() => <h2>404</h2>} />
         </Switch> 
-
-        {/* <Markdown escapeHtml={false} source={`# Title
-    \n\n\n
-  <img src="https://latex.codecogs.com/gif.latex?\\sqrt{n}"  />
-    \n\n\n
-    ## Title 2`} />        */}
       </div>
     );
   }

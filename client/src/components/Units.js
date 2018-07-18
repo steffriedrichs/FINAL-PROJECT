@@ -41,7 +41,7 @@ class Units extends React.Component {
         <div className="aroundAllContainer">
         {this.state.myCourse._units.map( (unit, index) => {
           return (
-          <div className="oneUnitContainer"> 
+          <div key={index} className="oneUnitContainer"> 
           <OneUnit 
             key={index}
             name={unit.name} 

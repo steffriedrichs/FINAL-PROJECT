@@ -3,7 +3,13 @@ const Schema = mongoose.Schema;
 
 const topicSchema = new mongoose.Schema({ 
   name:                 { type: String, required: true },
-  lecture:              { type: String },
+  lecture: {
+    text:           { type: String },
+    formula:        { type: String },
+    exampleText:    { type: String },
+    exampleFormula: { type: String },
+    finalText:      { type: String }
+  },
   _trainingExercises:   [{ type: Schema.Types.ObjectId, ref: "Exercise" }], 
   _testExercises:       [{ type: Schema.Types.ObjectId, ref: "Exercise" }], 
 });

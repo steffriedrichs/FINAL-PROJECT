@@ -98,7 +98,7 @@ class Exercises extends React.Component {
         <div className="aroundAllContainer">
         {this.state.exercises.map( (exercise, index) => {
           return (
-          <div className="oneExerciseContainer"> 
+          <div key={index} className="oneExerciseContainer"> 
           <OneExercise 
             key={index}
             name={exercise.name} 

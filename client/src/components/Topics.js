@@ -43,7 +43,7 @@ class Topics extends React.Component {
         <div className="aroundAllContainer">
         {this.state.myUnit._topics.map( (topic, index) => {
           return (
-          <div className="oneTopicContainer"> 
+          <div key={index} className="oneTopicContainer"> 
           <OneTopic 
             key={index}
             name={topic.name} 
