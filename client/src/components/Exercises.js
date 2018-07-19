@@ -19,6 +19,7 @@ class OneExercise extends React.Component {
   handleEventSubmitSolution(event){
     event.preventDefault();
     const answer =  event.target.value;
+
     this.setState({
       answer: event.target.value      
     }) 
@@ -26,14 +27,7 @@ class OneExercise extends React.Component {
     this.state.answer == this.props.solution ? this.setState({formClass: "correctAnswer"}) : this.setState({formClass: "wrongAnswer"});
     // update user information if exercise was solved correctly:
     this.state.answer == this.props.solution ? 
-      api.postUser()
-      .then( user => {
-        this.setState({
-         user: user[0],
-         loading: false
-        })
-      })
-      .catch(err => {throw err})
+      api.postUser(this.props.points).then( user => { this.setState({ user: user[0] })  })
     : false;
    
   }

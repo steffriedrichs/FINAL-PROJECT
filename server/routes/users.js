@@ -24,9 +24,10 @@ router.get('/:userName', (req, res, next) => {
   })
 });
 
-router.post('/:userName/:score', (req, res, next) => {
-  User.findOneAndUpdate({name: req.params.userName}, {$set:{score: req.params.score}}, {new: true})
+router.post('/score/:score', passport.authenticate("jwt", config.jwtSession), (req, res, next) => {
+  User.findByIdAndUpdate(req.user._id, {$inc:{score: req.params.score}}, {new: true})
   .then(user => {
+    console.log("backend user updated!");
     res.json(user)
   })
 });

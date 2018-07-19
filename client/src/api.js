@@ -62,9 +62,9 @@ export default {
       .catch(errHandler);
   },
 
-  postUser(userName, score) {
+  postUser(score) {
     return service
-      .get(`/users/${userName}/${score}`)
+      .post(`/users/score/${score}`)
       .then(res => res.data)
       .catch(errHandler);
   },

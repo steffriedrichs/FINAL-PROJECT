@@ -43,8 +43,6 @@ export default class Sidebar extends React.Component {
         <Link className="sidebarLink" to={pathSplitArray[4]}>Current course</Link> : <span></span>
         } */}
 
-
-
         {/* <hr/> */}
       </div>
     );

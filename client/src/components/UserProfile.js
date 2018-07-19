@@ -11,7 +11,6 @@ class UserProfile extends Component {
   componentDidMount(){
     api.getUser(api.loadUser().name)
     .then( user => {
-      console.log("USER der ankommt: ",user);
       this.setState({
        user: user 
       })
