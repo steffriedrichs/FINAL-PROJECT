@@ -203,7 +203,7 @@ const users = [
   {
     name: "Anna",
     email: "anna.testuser@abc.de",
-    // password: bcrypt.hashSync("ABCD", salt),
+    // password: bcrypt.hashSync("abc", salt),
     _courses: [], 
     score: 21
   },

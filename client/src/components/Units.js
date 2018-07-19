@@ -41,14 +41,12 @@ class Units extends React.Component {
         <div className="aroundAllContainer">
         {this.state.myCourse._units.map( (unit, index) => {
           return (
-          <div key={index} className="oneUnitContainer"> 
           <OneUnit 
             key={index}
             name={unit.name} 
             id={unit._id} 
           >
           </OneUnit>
-          </div>  
           )
         })}
         </div>

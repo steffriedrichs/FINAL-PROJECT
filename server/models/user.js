@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 
 const userSchema = new Schema({
-  name: {type:String, required: [true, "A name is required"]},
+  name: {type:String, required: [true, "A name is required"], unique: true},
   _courses: [{ type: Schema.Types.ObjectId, ref: "Module" }], 
   score: { type: Number, default: 0 },
   answeredExercises: [{

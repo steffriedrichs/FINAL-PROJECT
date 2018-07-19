@@ -1,5 +1,6 @@
 *{
   font-size: 20px;
+  color: rgba(0, 0, 0, 0.85);
 }
 
 /* general container */
@@ -13,11 +14,11 @@
 /* containers for individual components */
 .oneCourseContainer{
   align-items: center;
-  width: 200px;
-  height: 100px;
-  margin: 10px;
+  width: 250px;
+  height: 150px;
+  margin: 20px;
   padding: 10px;
-  background: rgb(49, 88, 82);
+  background: rgba(49, 88, 82, 0.8);
   border-radius: 15px;
   /* border-style: solid;
   border-color: rgb(24, 26, 25);
@@ -25,23 +26,29 @@
 }
 .oneUnitContainer{
   align-items: center;
-  margin: 30px;
+  width: 280px;
+  height: 140px;
+  margin: 25px;
   padding: 10px;
-  background: rgb(118, 158, 151);
+  background: rgba(97, 145, 137, 0.8);
   border-radius: 15px;
 }
 .oneTopicContainer{
   align-items: center;
-  margin: 30px;
+  width: 250px;
+  height: 200px;
+  margin: 25px;
   padding: 10px;
-  background: rgb(110, 142, 190);
+  background: rgba(121, 163, 167, 0.8);
   border-radius: 15px;
 }
 .oneExerciseContainer{
   align-items: center;
+  width: 600px;
+  height: auto;
   margin: 20px;
-  padding: 10px;
-  background: rgb(177, 187, 202);
+  padding: 20px;
+  background: rgba(157, 182, 178, 0.562);
   border-radius: 15px;
 }
 .topicName{
@@ -61,12 +68,19 @@
   font-weight: 200px;
   text-align: center; 
   position: relative;
-  top: 35%;
+  top: 40%;
   margin: 10px;
   text-decoration: none;
 }
 .myLink:hover{
   color: grey;
+}
+.topicLink{
+  position: relative;
+  top: 30%;
+}
+h1{
+  font-size: 28px;
 }
 
 
@@ -108,7 +122,8 @@
   font-weight: bold;
 }
 .solutionText{
-  text-align: justify;
+  text-align: center;
+  /* text-align: justify; */
   padding: 20px;
 }
 
@@ -118,5 +133,35 @@
   padding: 1% 10% 1% 10%;
 }
 .lectureHeading{
-font-size: 30px;
+  font-size: 30px;
+}
+.lectureDiv{
+  max-width: 1200px;  
+}
+
+/* sidebar component */
+.sidebarDiv{
+  text-align: center;
+  padding: 10px 1% 1% 1%;
+}
+.sidebarLink{
+  font-size: 22px;
+  color: rgba(43, 40, 40, 0.9);
+  font-weight: 200px;
+  text-align: center; 
+  text-decoration: none;
+}
+.sidebarLink:hover{
+  color:rgba(179, 175, 175, 0.856);
+}
+.scoreClass{
+  /* border: 2px solid rgba(212, 29, 99, 0.95); */
+  background: rgba(212, 29, 99, 0.5);
+  border-radius: 10px;
+  padding: 3%;
+  margin: 5%;
+}
+.Score{
+  color: rgb(59, 5, 26);
+  font-weight: bold;
 }

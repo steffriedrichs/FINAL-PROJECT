@@ -10,7 +10,8 @@ class OneExercise extends React.Component {
     this.state = {
       answer: "",
       displaySolution: false,
-      formClass: ""
+      formClass: "",
+      user: {}
     }
     this.submitSolution = this.handleEventSubmitSolution.bind(this);
     this.showSolution   = this.handleEventShowSolution.bind(this);
@@ -23,6 +24,18 @@ class OneExercise extends React.Component {
     }) 
     // check, if submitted answer is correct: 
     this.state.answer == this.props.solution ? this.setState({formClass: "correctAnswer"}) : this.setState({formClass: "wrongAnswer"});
+    // update user information if exercise was solved correctly:
+    this.state.answer == this.props.solution ? 
+      api.postUser()
+      .then( user => {
+        this.setState({
+         user: user[0],
+         loading: false
+        })
+      })
+      .catch(err => {throw err})
+    : false;
+   
   }
   // display solution, if user requests it:
   handleEventShowSolution(event){
@@ -48,7 +61,7 @@ class OneExercise extends React.Component {
             <button className="mySubmitButton" onClick={(e) => this.submitSolution(e)}>Submit</button>
             <button className="mySolutionButton" onClick={(e) => this.showSolution(e)}>Show Solution</button>
           </form>
-          {this.state.displaySolution ? <p className="solutionText"><span className="solution">Solution: </span> {this.props.description}</p> : <span></span>}
+          {this.state.displaySolution ? <p className="solutionText"><span className="solution">Solution:</span>{this.props.description}</p> : <span></span>}
         </div>
     );
   }
@@ -98,7 +111,6 @@ class Exercises extends React.Component {
         <div className="aroundAllContainer">
         {this.state.exercises.map( (exercise, index) => {
           return (
-          <div key={index} className="oneExerciseContainer"> 
           <OneExercise 
             key={index}
             name={exercise.name} 
@@ -109,7 +121,6 @@ class Exercises extends React.Component {
             id={exercise._id} 
           >
           </OneExercise>
-          </div>  
           )
         })}
         </div>

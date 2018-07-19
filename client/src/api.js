@@ -54,6 +54,21 @@ export default {
       .catch(errHandler);
   },
 
+  // 'users' hier ist nur '/' im users.js file!
+  getUser(userName) {
+    return service
+      .get(`/users/${userName}`)
+      .then(res => res.data)
+      .catch(errHandler);
+  },
+
+  postUser(userName, score) {
+    return service
+      .get(`/users/${userName}/${score}`)
+      .then(res => res.data)
+      .catch(errHandler);
+  },
+
   getSecret() {
     return service
       .get('/secret')
@@ -75,6 +90,7 @@ export default {
         password,
       })
       .then(res => {
+        // console.log("RES: ",res); only name and token
         const { data } = res;
         localStorage.setItem('user', JSON.stringify(data));
         axios.defaults.headers.common['Authorization'] = 'Bearer ' + data.token;

@@ -12,7 +12,6 @@ class OneCourse extends React.Component {
     return (
         <div className="oneCourseContainer">
         <Link className="myLink" to={`/courses/${this.props.id}`}>{this.props.name}</Link>
-        {/* <Route path={`/courses/${this.props.id}`} render={() => <Units id={this.props.id}>TEST</Units>}/>  */}
         </div>
     );
   }

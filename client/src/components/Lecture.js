@@ -27,7 +27,7 @@ class Lecture extends React.Component {
     if (this.state.loading)
       return "Loading..."
     return (
-      <div>
+      <div className="lectureDiv">
         <br/>
         <h1 className="lectureHeading">{this.state.myTopic.name}</h1>
         {/* allow for more flexibility by mapping through an array with text and formulas */}

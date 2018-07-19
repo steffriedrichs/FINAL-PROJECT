@@ -17,13 +17,20 @@ const storage = cloudinaryStorage({
 const parser = multer({ storage });
 
 
-// Route to get all users
-router.get('/', (req, res, next) => {
-  User.find()
-    .then(users => {
-      res.json(users)
-    })
+router.get('/:userName', (req, res, next) => {
+  User.find({name: req.params.userName})
+  .then(user => {
+      res.json(user)
+  })
 });
+
+router.post('/:userName/:score', (req, res, next) => {
+  User.findOneAndUpdate({name: req.params.userName}, {$set:{score: req.params.score}}, {new: true})
+  .then(user => {
+    res.json(user)
+  })
+});
+
 
 // Route to add a picture on one user with Cloudinary
 // To perform the request throw Postman, you need

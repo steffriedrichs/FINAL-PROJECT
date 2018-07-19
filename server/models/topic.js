@@ -8,13 +8,6 @@ const topicSchema = new mongoose.Schema({
     element: { type: String },
     isText:  { type: Boolean}
   }],
-  // lecture: {
-  //   texts:          [{ type: String }],
-  //   formula:        { type: String },
-  //   exampleText:    { type: String },
-  //   exampleFormula: { type: String },
-  //   finalText:      { type: String }
-  // },
   _trainingExercises: [{ type: Schema.Types.ObjectId, ref: "Exercise" }], 
   _testExercises:     [{ type: Schema.Types.ObjectId, ref: "Exercise" }], 
 });

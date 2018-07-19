@@ -8,7 +8,7 @@ class OneTopic extends React.Component {
   render() {
     return (
         <div className="oneTopicContainer">
-          <Link className="myLink" to={`/courses/units/topics/lecture/${this.props.id}`}>{this.props.name}</Link><br/><br/>
+          <Link className="myLink topicLink" to={`/courses/units/topics/lecture/${this.props.id}`}>{this.props.name}</Link><br/><br/>
           <Link className="myLink" to={`/courses/units/topics/${this.props.id}/training`}>Training</Link>
           <Link className="myLink" to={`/courses/units/topics/${this.props.id}/test`}>Test</Link>
         </div>
@@ -43,14 +43,12 @@ class Topics extends React.Component {
         <div className="aroundAllContainer">
         {this.state.myUnit._topics.map( (topic, index) => {
           return (
-          <div key={index} className="oneTopicContainer"> 
           <OneTopic 
             key={index}
             name={topic.name} 
             id={topic._id} 
           >
           </OneTopic>
-          </div>  
           )
         })}
         </div>
