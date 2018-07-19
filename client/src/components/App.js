@@ -34,9 +34,29 @@ class App extends Component {
   constructor(props) {
     super(props)
     api.loadUser();
+    this.state = {
+      score: null
+    }
   }
+
+  componentDidMount(){
+    api.getScore()
+    .then( score => {
+      this.setState({
+        score
+      })
+    })
+    .catch(err => {throw err})
+  }
+
   handleLogoutClick(e) {
     api.logout()
+  }
+
+  handleScoreChange(score) {
+    this.setState({
+      score: score
+    })
   }
   render() {              
     return (
@@ -52,7 +72,7 @@ class App extends Component {
       { api.isLoggedIn() ? 
         <div className="mainDiv">
           <div className="subDivLeft">
-            <Sidebar user={api.loadUser()}/>
+            <Sidebar score={this.state.score} user={api.loadUser()}/>
             {/* <Sidebar user={api.isLoggedIn()}/> -> returns true / false*/}
           </div>
           <div className="subDivRight">
@@ -64,7 +84,7 @@ class App extends Component {
               <Route path="/courses/:courseId" exact component={Units} />
               <Route path="/courses/units/:unitId" exact component={Topics} />
               <Route path="/courses/units/topics/lecture/:topicId" exact component={Lecture} />
-              <Route path="/courses/units/topics/:topicId/:type" exact component={Exercises} />
+              <Route path="/courses/units/topics/:topicId/:type" exact render={props => <Exercises {...props} onScoreChange={(score) => this.handleScoreChange(score)} />} />
               <Route render={() => <h2>404</h2>} />
             </Switch> 
           </div>

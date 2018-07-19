@@ -16,6 +16,12 @@ const storage = cloudinaryStorage({
 
 const parser = multer({ storage });
 
+router.get('/score', passport.authenticate("jwt", config.jwtSession), (req, res, next) => {
+  User.findById(req.user._id)
+  .then(user => {
+      res.json(user.score)
+  })
+});
 
 router.get('/:userName', (req, res, next) => {
   User.find({name: req.params.userName})
@@ -23,6 +29,8 @@ router.get('/:userName', (req, res, next) => {
       res.json(user)
   })
 });
+
+
 
 router.post('/score/:score', passport.authenticate("jwt", config.jwtSession), (req, res, next) => {
   User.findByIdAndUpdate(req.user._id, {$inc:{score: req.params.score}}, {new: true})

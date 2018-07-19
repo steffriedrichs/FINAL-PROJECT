@@ -62,6 +62,13 @@ export default {
       .catch(errHandler);
   },
 
+  getScore()  {
+    return service
+      .get(`/users/score`)
+      .then(res => res.data)
+      .catch(errHandler);
+  },
+
   postUser(score) {
     return service
       .post(`/users/score/${score}`)

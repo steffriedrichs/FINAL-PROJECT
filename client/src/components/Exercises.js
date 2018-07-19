@@ -27,7 +27,10 @@ class OneExercise extends React.Component {
     this.state.answer == this.props.solution ? this.setState({formClass: "correctAnswer"}) : this.setState({formClass: "wrongAnswer"});
     // update user information if exercise was solved correctly:
     this.state.answer == this.props.solution ? 
-      api.postUser(this.props.points).then( user => { this.setState({ user: user[0] })  })
+      api.postUser(this.props.points).then( user => { 
+        this.props.onScoreChange(user.score)
+        this.setState({ user: user })
+      })
     : false;
    
   }
@@ -113,6 +116,7 @@ class Exercises extends React.Component {
             description={exercise.description}
             points={exercise.points} 
             id={exercise._id} 
+            onScoreChange={this.props.onScoreChange}
           >
           </OneExercise>
           )

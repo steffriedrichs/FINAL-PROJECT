@@ -30,7 +30,7 @@ export default class Sidebar extends React.Component {
     console.log("SCORE: ",this.state.user.score);
     return (
       <div className="sidebarDiv">
-        <div className="scoreClass"> Your Score is: <span className="Score">{this.state.user.score}</span></div>
+        <div className="scoreClass"> Your Score is: <span className="Score">{this.props.score}</span></div>
         {/* always link to courses page */}
         <Link className="sidebarLink" to="/courses">All courses</Link><br/>
         {/* save the current path */}
