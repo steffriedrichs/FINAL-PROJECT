@@ -11,6 +11,4 @@ The database can be seeded using the seeds file in 'server/bin/seeds.js' using t
 
 
 
-**Stack:** 
-
-React, JavaScript, Express, Node.js, MongoDB / mongoose, CSS, HTML, ES6
+**Stack:** React, JavaScript, Express, Node.js, MongoDB / mongoose, CSS, HTML, ES6
