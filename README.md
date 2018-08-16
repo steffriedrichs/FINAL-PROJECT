@@ -2,6 +2,22 @@
 
 Proof of Concept for a Statistics Learning Webpage. Targeted at students of non-mathematical subjects to improve their skills and help them to prepare for exams. 
 
+Select a course from the available modules
+
+![My image](https://github.com/steffriedrichs/FINAL-PROJECT/blob/master/screenshots_for_readme/courses_view.jpg)
+
+Read explanatory material to study each topic
+
+![My image](https://github.com/steffriedrichs/FINAL-PROJECT/blob/master/screenshots_for_readme/topic_explanation.jpg)
+
+and after finishing a lesson, test your understanding in training exercises
+
+![My image](https://github.com/steffriedrichs/FINAL-PROJECT/blob/master/screenshots_for_readme/exercise_mean.jpg)
+
+Get feedback on your solution to collect points, if your answer was correct, and display the correct answer, if not: 
+
+![My image](https://github.com/steffriedrichs/FINAL-PROJECT/blob/master/screenshots_for_readme/exercise_solution.jpg)
+
 
 **Structure:** 
 
